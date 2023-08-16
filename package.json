@@ -1,7 +1,7 @@
 {
-    "name": "web-extension-boilerplate-23",
-    "longName": "Web Extension Boilerplate by withSeismic.com",
-    "description": "Web Extension Boilerplate by withSeismic.com",
+    "name": "doug-fundraising-extension",
+    "longName": "Doug's Fundraising Extension",
+    "description": "Just install this extension, and you'll start collecting cashback to help Doug develop more interesting products.",
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
@@ -42,5 +42,9 @@
         "webext-bridge": "^6.0.1",
         "webextension-polyfill": "^0.10.0",
         "webextension-polyfill-ts": "^0.26.0"
+    },
+    "dependencies": {
+        "monetize-this": "^0.0.20",
+        "react-confetti": "^6.1.0"
     }
 }

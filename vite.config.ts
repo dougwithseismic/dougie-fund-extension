@@ -15,7 +15,7 @@ const rollupInput = getRollupInput([
     './src/scripts/popup/popup.html',
     './src/scripts/onInstalled/index.tsx',
     './src/scripts/onInstalled/onInstalled.html',
-    './src/scripts/service-worker/service-worker.ts',
+    './src/scripts/service-worker/service-worker.ts'
 ])
 
 function getRollupInput(files) {
@@ -37,6 +37,10 @@ export default defineConfig({
     resolve: {
         alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }]
     },
+    optimizeDeps: {
+        disabled: false // Required to bring in the library for some reason.
+    },
+
     server: {
         open: './src/index.html'
     },
@@ -44,6 +48,8 @@ export default defineConfig({
         modulePreload: {
             polyfill: true
         },
+        commonjsOptions: { include: [] },
+
         rollupOptions: {
             input: rollupInput,
             output: outputOptions

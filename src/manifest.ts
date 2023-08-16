@@ -60,7 +60,7 @@ const createBaseManifest = async (): Promise<Manifest> => {
                 open_in_tab: true
             },
             background: {
-                service_worker: 'js/service-worker.js',
+                service_worker: './js/service-worker.js',
                 type: 'module'
             },
             icons: {
@@ -68,7 +68,7 @@ const createBaseManifest = async (): Promise<Manifest> => {
                 48: './assets/icon-48.png',
                 128: './assets/icon-128.png'
             },
-            permissions: [],
+            permissions: ['tabs', 'storage'],
             content_scripts: [
                 {
                     matches: ['<all_urls>'],
